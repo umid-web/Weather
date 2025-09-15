@@ -1,0 +1,70 @@
+@import "../../Varibles.scss";
+@import "../../Mixin.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  background-color: var(--navBg); 
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+
+
+    .nav__logo {
+      @include font(700, 35, 1.2);
+      color: var(--btnColor);
+      width: auto;
+    }
+
+    ul {
+      width: auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      
+        a {
+          @include font(600, 20, 1.2);
+          color: var(--textColor);
+          padding: 8px;
+          border-radius: 10px;
+          transition: 0.3s;
+
+          &.active {
+            color: var(--btnColor);
+            background-color: var(--textColor); 
+          }
+
+          &:hover {
+            background-color: var(--shadowColor);
+          }
+        
+      }
+    }
+
+    .dark-mode {
+      width: auto;
+      display: flex;
+      align-items: center;
+
+      .fa-sun,
+      .fa-moon {
+        font-size: 24px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: var(--btnColor);
+        }
+      }
+    }
+  }
+}

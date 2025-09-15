@@ -1,0 +1,105 @@
+@import "../../Varibles.scss";
+@import "../../Mixin.scss";
+
+.about-page {
+  background-color: var(--bgColor);
+  
+  .container {
+    max-width: 1440px;
+    padding: 100px 20px;
+    margin: 0 auto;
+
+  }
+
+  .about-title {
+    @include font(800, 40, 1.2);
+    color: var(--btnColor);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    width: 100%;
+    @include font(500, 18, 1.6);
+    color: var(--textColor);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .tech-box {
+    width: 70%;
+    background: var(--bgColor);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px var(--shadowColor);
+    margin:0 auto 30px;
+    .tech-title {
+      @include font(700, 26, 1.4);
+      color: var(--titleColor);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+
+      li {
+        @include font(400, 18, 1.5);
+        color: var(--textColor);
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .api-info {width: 70%;
+    background: lighten(#2563eb, 42%);
+    border-left: 5px solid #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+margin: 0 auto 30px;
+    .api-title {
+      @include font(600, 22, 1.4);
+      color: var(--btnColor);
+      margin-bottom: 10px;
+    }
+
+    .api-description {
+      text-align: left;
+      color: var(--xcColor);
+
+      span {
+        font-weight: 600;
+        color: var(--btnColor);
+      }
+    }
+  }
+
+  .author-box {
+    text-align: center;
+
+    .author-title {
+      @include font(700, 26, 1.4);
+      color: var(--titleColor);
+      margin-bottom: 10px;
+    }
+
+    .author-description {
+      @include font(400, 18, 1.5);
+      color: var(--textColor);
+      margin-bottom: 15px;
+    }
+
+    .author-email {
+      @include font(600, 18, 1.5);
+      color: var(--btnColor);
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--titleColor);
+      }
+    }
+  }
+}

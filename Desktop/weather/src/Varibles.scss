@@ -1,0 +1,25 @@
+:root {
+  --navBg: grey;
+  --titleColor: #000;
+  --bgColor: #fff;
+  --textColor: #333;
+  --btnColor: orange;
+  --borderColor: gray;
+  --shadowColor: rgba(0, 0, 0, 0.1);
+  --xlColor: #fff;
+  --xcColor:#000;
+}
+
+/* 🌙 Dark mode */
+body.dark {
+  --navBg: #201f1f;
+  --titleColor: #fff;
+  --bgColor: #121212;
+  --textColor: #e3d9d9;
+  --btnColor: #ff9800;
+  --borderColor: #444;
+  --shadowColor: rgba(255, 255, 255, 0.14);
+  --xlColor: #c6c4c4;
+  --xcColor:#000;
+}
+
