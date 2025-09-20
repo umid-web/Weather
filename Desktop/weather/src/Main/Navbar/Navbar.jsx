@@ -20,6 +20,26 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      <div className="modal">
+      <ul>
+            <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active nav__link" : "nav__link")}
+          >
+            Home
+          </NavLink>
+      </ul>
+
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active nav__link" : "nav__link")}
+          >
+            About
+          </NavLink>
+
+
+      </div>
       <div className="container">
         <h2 className="nav__logo">Weather</h2>
         <ul>
@@ -41,7 +61,7 @@ const Navbar = () => {
 
 
         </ul>
-
+<div className="corner">
         <div className="dark-mode" onClick={toggleMode}>
           {darkMode ? (
             <i className="fa-solid fa-sun" style={{ color: "var(--titleColor)" }}></i>
@@ -49,7 +69,11 @@ const Navbar = () => {
           ) : (
             <i className="fa-solid fa-moon" style={{ color: "var(--btnColor)" }}></i>
           )}
+
         </div>
+                  <i className='fa-solid fa-bars'></i>
+</div>
+
       </div>
     </div>
   );
