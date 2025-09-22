@@ -1,6 +1,8 @@
 @import "../../Varibles.scss";
 @import "../../Mixin.scss";
 
+
+
 .about-page {
   background-color: var(--bgColor);
   
@@ -102,4 +104,173 @@ margin: 0 auto 30px;
       }
     }
   }
+}
+
+
+
+
+@media(max-width:990px){
+  .about-page {  
+  .container {
+    padding: 100px 20px;
+  }
+
+  .about-title {
+    @include font(650, 30, 1.2);
+    margin-bottom: 15px;
+  }
+
+  .about-description {
+    width: 95%;
+   margin: 0 auto 20px;
+    @include font(500, 17, 1.6);
+  }
+
+  .tech-box {
+    width: 90%;
+    .tech-title {
+      @include font(600, 19, 1.4);
+    }
+
+    ul {
+      li {
+        @include font(400, 17, 1.5);
+      }
+    }
+  }
+
+  .api-info {width: 90%;
+    .api-title {
+      @include font(600, 19, 1.4);
+    }
+  }
+
+  .author-box {
+    .author-title {
+      @include font(700, 22, 1.4);
+    }
+
+    .author-description {
+      @include font(500, 17, 1.5);
+    }
+
+    .author-email {
+      @include font(600, 19, 1.5);
+    }
+  }
+}
+}
+
+
+
+
+
+
+
+@media(max-width:768px){
+  .about-page {  
+  .container {
+    padding: 100px 20px;
+  }
+
+  .about-title {
+    @include font(600, 28, 1.2);
+    margin-bottom: 15px;
+  }
+
+  .about-description {
+    @include font(500, 16, 1.6);
+  }
+
+  .tech-box {
+    width: 100%;
+    .tech-title {
+      @include font(600, 18, 1.4);
+    }
+
+    ul {
+      li {
+        @include font(400, 16, 1.5);
+      }
+    }
+  }
+
+  .api-info {width: 100%;
+    .api-title {
+      @include font(600, 18, 1.4);
+    }
+  }
+
+  .author-box {
+    .author-title {
+      @include font(700, 22, 1.4);
+    }
+
+    .author-description {
+      @include font(500, 16, 1.5);
+    }
+
+    .author-email {
+      @include font(600, 18, 1.5);
+    }
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:447px){
+  .about-page {  
+  .container {
+    padding: 90px 20px;
+  }
+
+  .about-title {
+    @include font(600, 25, 1.2);
+    margin-bottom: 15px;
+  }
+
+  .about-description {
+    @include font(500, 15, 1.6);
+  }
+
+  .tech-box {
+    width: 100%;
+    .tech-title {
+      @include font(600, 17.5, 1.4);
+    }
+
+    ul {
+      li {
+        @include font(400, 16, 1.5);
+      }
+    }
+  }
+
+  .api-info {width: 100%;
+    .api-title {
+      @include font(600, 17.5, 1.4);
+    }
+  }
+
+  .author-box {
+    .author-title {
+      @include font(700, 22, 1.4);
+    }
+
+    .author-description {
+      @include font(500, 16, 1.5);
+    }
+
+    .author-email {
+      @include font(600, 18, 1.5);
+    }
+  }
+}
 }

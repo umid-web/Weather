@@ -362,7 +362,8 @@ justify-content: space-between;
 
       .forecast-card {
         padding: 15px;
-        width: 43%;
+        width: 46.5%;
+        height: 170px;
         p {
           margin: 5px 0;
           @include font(400, 16, 1.4);

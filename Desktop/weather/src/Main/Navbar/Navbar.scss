@@ -10,33 +10,53 @@
   padding: 20px 0;
   background-color: var(--navBg);
 
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1090;
+  }
+
+  // 🔹 MODAL STYLE
   .modal {
     position: fixed;
     top: 0;
-    left: 100%;
+    left: 100%; // yopiq holatda ekrandan tashqarida
     width: 80%;
     height: 100vh;
-    bottom: 0;
-    background-color: rgba(1, 1, 1, 0.5);
+    background-color: var(--xcColor);
+    opacity: 0.9;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    flex-direction: column; // ustun ko‘rinishda
+    padding: 40px 20px;
+    gap: 30px;
+    transition: 0.4s ease-in-out;
+    z-index: 1100;
+
+    .logo {
+      @include font(700, 28, 1.2);
+      color: var(--btnColor);
+      margin-bottom: 20px;
+    }
 
     ul {
-      width: auto;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
       a {
         @include font(600, 20, 1.2);
         color: var(--textColor);
-        padding: 8px;
+        padding: 5px 15px;
         border-radius: 10px;
         transition: 0.3s;
 
         &.active {
           color: var(--btnColor);
-          background-color: var(--textColor);
+          background-color: var(--xlColor);
         }
 
         &:hover {
@@ -44,11 +64,31 @@
         }
       }
     }
-    &.active{
-      left: 0;
+
+    button {
+      margin-top: auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--btnColor);
+      color: #fff;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      transition: 0.3s;
+margin-left: 80px;
+margin-right: 80px;
+      &:hover {
+        background-color: var(--btnColor);
+      }
+    }
+
+    &.active {
+      left: 0; // ochilganda chapdan chiqadi
     }
   }
 
+  // 🔹 NAVBAR CONTAINER
   .container {
     display: flex;
     align-items: center;
@@ -86,69 +126,59 @@
       }
     }
 
-.corner{
+    .corner {
       display: flex;
       align-items: center;
       gap: 20px;
-          .dark-mode {
-      width: auto;
-      display: flex;
-      align-items: center;
 
-      .fa-sun,
-      .fa-moon {
-        font-size: 24px;
+      .dark-mode {
+        display: flex;
+        align-items: center;
+
+        .fa-sun,
+        .fa-moon {
+          font-size: 24px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            color: var(--btnColor);
+          }
+        }
+      }
+
+      .fa-bars {
+        display: none;
+        font-size: 22px;
         cursor: pointer;
         transition: 0.3s;
+        color: var(--xlColor);
 
         &:hover {
-          color: var(--btnColor);
+          color: var(--textColor);
         }
       }
     }
-
-    .fa-bars {
-      display: none;
-      font-size: 22px;
-      cursor: pointer;
-      transition: 0.3s;
-      color: var(--xlColor);
-
-      &:hover {
-        color: var(--textColor);
-      }
-    }
-}
   }
 }
 
-// ✅ Responsive
+// ✅ RESPONSIVE
 @media (max-width: 570px) {
   .navbar {
     .container {
- .nav__logo {
-      @include font(700, 30, 1.2);
-    }
+      .nav__logo {
+        @include font(700, 30, 1.2);
+      }
 
       ul {
-        display: none;
+        display: none; // desktop menyu yashiriladi
       }
 
-    .corner{
-      display: flex;
-      align-items: center;
-      gap: 20px;
-          .dark-mode {
-      .fa-sun,
-      .fa-moon {
-        font-size: 24px;
+      .corner {
+        .fa-bars {
+          display: block; // kichik ekranlarda ko‘rinadi
+        }
       }
-    }
-
-    .fa-bars {
-      display: flex;
-justify-content: center;    }
-}
     }
   }
 }
