@@ -1,0 +1,87 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 900; // Lower than navbar (1000) but above other content
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease-out;
+  pointer-events: auto; // Ensure overlay captures all clicks
+  
+  // Prevent interaction with content behind the modal
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+.modal-content {
+  background: var(--bgColor);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  z-index: 901; // Just above the overlay
+  margin-top: 60px; // Add space for navbar
+  
+  // Prevent content from being hidden behind navbar
+  @media (max-height: 700px) {
+    max-height: calc(100vh - 120px);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--borderColor);
+  
+  h3 {
+    margin: 0;
+    color: var(--titleColor);
+    font-size: 1.5rem;
+  }
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--textColor);
+  padding: 0 10px;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: var(--btnColor);
+  }
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection - user can only access their own document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Statistics subcollection - user can only access their own statistics
+      match /statistics/{statsId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+      
+      // Search history subcollection - user can only access their own search history
+      match /searchHistory/{historyId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Legacy collections for backward compatibility (can be removed later)
+    match /userStats/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    match /userSearchHistory/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow read access to public data (if any)
+    match /public/{document=**} {
+      allow read: if true;
+    }
+  }
+}

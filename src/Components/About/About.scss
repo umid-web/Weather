@@ -1,0 +1,536 @@
+@import "../../Varibles.scss";
+@import "../../Mixin.scss";
+
+/* ====================
+   ABOUT PAGE STYLES
+   ==================== */
+
+.about-page {
+  background-color: var(--bgColor);
+  min-height: calc(100vh - 80px);
+  padding-top: 100px;
+  
+  .container {
+    max-width: 1200px;
+    padding: 0 20px 80px;
+    margin: 0 auto;
+
+    /* ====================
+       PAGE TITLE
+       ==================== */
+    .about-title {
+      @include font(800, 48, 1.1);
+      color: var(--titleColor);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 20px;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primaryColor), #7c3aed);
+        border-radius: 2px;
+      }
+      
+      &::before {
+        content: '🌦';
+        margin-right: 15px;
+        font-size: 48px;
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+
+    /* ====================
+       PAGE DESCRIPTION
+       ==================== */
+    .about-description {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      @include font(500, 20, 1.8);
+      color: var(--textColor);
+      text-align: center;
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--cardBg), rgba(var(--primaryColor-rgb, 37, 99, 235), 0.05));
+      border: 1px solid var(--borderColor);
+      box-shadow: 0 8px 30px var(--shadowColor);
+      animation: fadeIn 0.6s ease 0.1s both;
+    }
+
+    /* ====================
+       TECH STACK SECTION
+       ==================== */
+    .tech-box {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background: linear-gradient(135deg, var(--cardBg), rgba(125, 58, 237, 0.05));
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px var(--shadowColor);
+      border: 1px solid var(--borderColor);
+      animation: fadeIn 0.6s ease 0.2s both;
+      
+      .tech-title {
+        @include font(700, 32, 1.2);
+        color: var(--titleColor);
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        
+        &::before {
+          content: '🛠';
+          font-size: 28px;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          @include font(400, 18, 1.6);
+          color: var(--textColor);
+          margin-bottom: 15px;
+          padding: 12px 20px;
+          border-radius: 12px;
+          background: var(--bgColor);
+          border: 1px solid var(--borderColor);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          &:hover {
+            transform: translateX(10px);
+            background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.05);
+            border-color: var(--primaryColor);
+            box-shadow: 0 4px 15px rgba(var(--primaryColor-rgb, 37, 99, 235), 0.1);
+          }
+
+          &::before {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    /* ====================
+       API INFO SECTION
+       ==================== */
+    .api-info {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background: linear-gradient(135deg, rgba(var(--primaryColor-rgb, 37, 99, 235), 0.08), rgba(125, 58, 237, 0.05));
+      border-left: 5px solid var(--primaryColor);
+      padding: 40px;
+      border-radius: 20px;
+      animation: fadeIn 0.6s ease 0.3s both;
+
+      .api-title {
+        @include font(600, 28, 1.3);
+        color: var(--primaryColor);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        
+        &::before {
+          content: '🔗';
+          font-size: 24px;
+        }
+      }
+
+      .api-description {
+        @include font(400, 18, 1.7);
+        color: var(--textColor);
+        text-align: left;
+
+        span {
+          font-weight: 700;
+          color: var(--primaryColor);
+          background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.1);
+          padding: 4px 12px;
+          border-radius: 8px;
+          display: inline-block;
+          margin: 0 5px;
+        }
+      }
+    }
+
+    /* ====================
+       AUTHOR SECTION
+       ==================== */
+    .author-box {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--cardBg), rgba(var(--primaryColor-rgb, 37, 99, 235), 0.05));
+      border: 1px solid var(--borderColor);
+      box-shadow: 0 8px 30px var(--shadowColor);
+      text-align: center;
+      animation: fadeIn 0.6s ease 0.4s both;
+
+      .author-title {
+        @include font(700, 32, 1.2);
+        color: var(--titleColor);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        
+        &::before {
+          content: '👨‍💻';
+          font-size: 28px;
+        }
+      }
+
+      .author-description {
+        @include font(400, 18, 1.7);
+        color: var(--textColor);
+        margin-bottom: 25px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .author-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        @include font(600, 18, 1.5);
+        color: var(--primaryColor);
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.1);
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+
+        &::before {
+          content: '✉️';
+          font-size: 20px;
+        }
+
+        &:hover {
+          background: var(--primaryColor);
+          color: white;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(var(--primaryColor-rgb, 37, 99, 235), 0.3);
+          border-color: var(--primaryColor);
+        }
+
+        &:active {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+/* ====================
+   ANIMATIONS
+   ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ====================
+   RESPONSIVE STYLES
+   ==================== */
+
+// Tablet Styles
+@media (max-width: 992px) {
+  .about-page {
+    padding-top: 80px;
+    
+    .container {
+      padding: 0 20px 60px;
+
+      .about-title {
+        @include font(800, 36, 1.2);
+        padding-bottom: 15px;
+        
+        &::before {
+          font-size: 36px;
+        }
+      }
+
+      .about-description {
+        padding: 25px;
+        @include font(500, 18, 1.7);
+        margin-bottom: 40px;
+      }
+
+      .tech-box,
+      .api-info,
+      .author-box {
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      .tech-box {
+        .tech-title {
+          @include font(700, 28, 1.2);
+        }
+        
+        ul li {
+          @include font(400, 16, 1.6);
+          padding: 10px 16px;
+        }
+      }
+
+      .api-info {
+        .api-title {
+          @include font(600, 24, 1.3);
+        }
+        
+        .api-description {
+          @include font(400, 16, 1.6);
+        }
+      }
+
+      .author-box {
+        .author-title {
+          @include font(700, 28, 1.2);
+        }
+        
+        .author-description {
+          @include font(400, 16, 1.6);
+        }
+        
+        .author-email {
+          @include font(600, 16, 1.5);
+          padding: 10px 24px;
+        }
+      }
+    }
+  }
+}
+
+// Mobile Styles
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 70px;
+    
+    .container {
+      padding: 0 15px 50px;
+
+      .about-title {
+        @include font(800, 28, 1.3);
+        margin-bottom: 25px;
+        
+        &::before {
+          font-size: 28px;
+          margin-right: 10px;
+        }
+        
+        &::after {
+          width: 80px;
+          height: 3px;
+        }
+      }
+
+      .about-description {
+        padding: 20px;
+        @include font(500, 16, 1.7);
+        margin-bottom: 30px;
+      }
+
+      .tech-box,
+      .api-info,
+      .author-box {
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 16px;
+      }
+
+      .tech-box {
+        .tech-title {
+          @include font(700, 24, 1.3);
+        }
+        
+        ul li {
+          @include font(400, 15, 1.6);
+          padding: 10px 14px;
+          
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+      }
+
+      .api-info {
+        .api-title {
+          @include font(600, 22, 1.3);
+        }
+        
+        .api-description {
+          @include font(400, 15, 1.6);
+        }
+      }
+
+      .author-box {
+        .author-title {
+          @include font(700, 24, 1.3);
+        }
+        
+        .author-description {
+          @include font(400, 15, 1.6);
+        }
+        
+        .author-email {
+          @include font(600, 15, 1.5);
+          padding: 10px 20px;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 480px) {
+  .about-page {
+    .container {
+      .about-title {
+        @include font(800, 24, 1.4);
+        
+        &::before {
+          font-size: 24px;
+          margin-right: 8px;
+        }
+      }
+
+      .about-description {
+        padding: 18px;
+        @include font(500, 15, 1.7);
+      }
+
+      .tech-box,
+      .api-info,
+      .author-box {
+        padding: 20px;
+      }
+
+      .tech-box {
+        .tech-title {
+          @include font(700, 22, 1.3);
+        }
+        
+        ul li {
+          @include font(400, 14, 1.5);
+        }
+      }
+
+      .api-info {
+        .api-title {
+          @include font(600, 20, 1.4);
+        }
+        
+        .api-description {
+          @include font(400, 14, 1.5);
+          
+          span {
+            padding: 3px 8px;
+          }
+        }
+      }
+
+      .author-box {
+        .author-title {
+          @include font(700, 22, 1.3);
+        }
+        
+        .author-description {
+          @include font(400, 14, 1.5);
+        }
+        
+        .author-email {
+          @include font(600, 14, 1.5);
+        }
+      }
+    }
+  }
+}
+
+// Dark Mode Support
+.dark {
+  .about-page {
+    background-color: var(--bgColor);
+    
+    .container {
+      .about-description,
+      .tech-box,
+      .api-info,
+      .author-box {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .tech-box ul li {
+        background: rgba(255, 255, 255, 0.05);
+        
+        &:hover {
+          background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.1);
+        }
+      }
+      
+      .api-info {
+        background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.08);
+      }
+      
+      .author-email {
+        background: rgba(var(--primaryColor-rgb, 37, 99, 235), 0.1);
+        
+        &:hover {
+          background: var(--primaryColor);
+        }
+      }
+    }
+  }
+}
+
+/* ====================
+   PAGE TRANSITION
+   ==================== */
+
+.about-page {
+  animation: pageTransition 0.5s ease;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

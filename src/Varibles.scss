@@ -1,0 +1,41 @@
+// SCSS variables
+$primary-color: #ff9800; // Default orange color (same as --btnColor in light mode)
+
+:root {
+  --navBg: grey;
+  --titleColor: #000;
+  --bgColor: #fff;
+  --textColor: #333;
+  --btnColor: orange;
+  --borderColor: gray;
+  --shadowColor: rgba(0, 0, 0, 0.1);
+  --xlColor: #fff;
+  --xcColor:#000;
+  --primaryColor: #ff9800;
+  --primaryHover: #f57c00;
+  --cardBg: #fff;
+  --hoverColor: #f5f5f5;
+  --textSecondary: #666;
+  --navBg-rgb: 255, 255, 255;
+  --primaryColor-rgb: 255, 152, 0;
+}
+
+/* Dark mode */
+body.dark {
+  --navBg: #201f1f;
+  --titleColor: #fff;
+  --bgColor: #121212;
+  --textColor: #e3d9d9;
+  --btnColor: #ff9800;
+  --borderColor: #444;
+  --shadowColor: rgba(255, 255, 255, 0.14);
+  --xlColor: #c6c4c4;
+  --xcColor:#000;
+  --primaryColor: #ff9800;
+  --primaryHover: #f57c00;
+  --cardBg: #1e1e1e;
+  --hoverColor: #2a2a2a;
+  --textSecondary: #999;
+  --navBg-rgb: 32, 31, 31;
+  --primaryColor-rgb: 255, 152, 0;
+}
