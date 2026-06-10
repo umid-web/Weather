@@ -2,10 +2,10 @@ import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Navbar from './Main/Navbar/Navbar';
 import Footer from './Main/Footer/Footer';
-import Home from './components/HomeComponenta/Home';
-import About from './components/About/About';
-import Service from './components/ServiceComponents/Service';
-import Login from './components/Auth/Login';
+import Home from './components/HomeComponenta/Home.jsx';
+import About from './components/About/About.jsx';
+import Service from './components/ServiceComponents/Service.jsx';
+import Login from './components/Auth/Login.jsx';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { useSyncUser } from './hooks/useSyncUser';
 
