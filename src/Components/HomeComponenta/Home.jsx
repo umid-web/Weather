@@ -71,14 +71,6 @@ const Home = () => {
     setError(null);
   };
 
-  const goToService = () => {
-    if (!city.trim()) {
-      setError("❌ Shahar nomini kiriting!");
-      return;
-    }
-    navigate(`/service/${encodeURIComponent(city.trim())}`);
-  };
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       getWeather();
