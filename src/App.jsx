@@ -1,14 +1,23 @@
 import React, { lazy, Suspense, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation
+} from 'react-router-dom';
+
 import Navbar from './Main/Navbar/Navbar';
 import Footer from './Main/Footer/Footer';
-import Home from './components/HomeComponenta/Home';
-import About from './components/About/About.jsx';
-import Service from './components/ServiceComponents/Service';
-import Login from './components/Auth/Login.jsx';
+
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { useSyncUser } from './hooks/useSyncUser';
 
+// ✅ Lazy pages (hammasi bir xil style)
+const Home = lazy(() => import('./components/HomeComponenta/Home'));
+const About = lazy(() => import('./components/About/About'));
+const Service = lazy(() => import('./components/ServiceComponents/Service'));
+const Login = lazy(() => import('./components/Auth/Login'));
 const Register = lazy(() => import('./components/Auth/Register'));
 const Profile = lazy(() => import('./components/Profile/Profile'));
 
@@ -38,6 +47,7 @@ function AppContent() {
   return (
     <div className="App">
       <Navbar setCity={setCity} />
+
       <main className={isAuthPage ? 'auth-page' : ''}>
         <Suspense fallback={<div className="loading">Yuklanmoqda...</div>}>
           <Routes>
@@ -52,7 +62,9 @@ function AppContent() {
                 />
               }
             />
+
             <Route path="/about" element={<About />} />
+
             <Route
               path="/service/:city"
               element={
@@ -61,8 +73,10 @@ function AppContent() {
                 </PrivateRoute>
               }
             />
+
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
             <Route
               path="/profile"
               element={
@@ -71,16 +85,18 @@ function AppContent() {
                 </PrivateRoute>
               }
             />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </main>
+
       <Footer />
     </div>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
       <AuthProvider>
@@ -89,5 +105,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
