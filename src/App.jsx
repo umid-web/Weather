@@ -14,12 +14,12 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { useSyncUser } from './hooks/useSyncUser';
 
 // ✅ Lazy pages (hammasi bir xil style)
-const Home = lazy(() => import('./components/HomeComponenta/Home.jsx'));
-const About = lazy(() => import('./components/About/About.jsx'));
-const Service = lazy(() => import('./components/ServiceComponents/Service.jsx'));
-const Login = lazy(() => import('./components/Auth/Login.jsx'));
-const Register = lazy(() => import('./components/Auth/Register.jsx'));
-const Profile = lazy(() => import('./components/Profile/Profile.jsx'));
+const Home = lazy(() => import('./Components/HomeComponenta/Home.jsx'));
+const About = lazy(() => import('./Components/About/About.jsx'));
+const Service = lazy(() => import('./Components/ServiceComponents/Service.jsx'));
+const Login = lazy(() => import('./Components/Auth/Login.jsx'));
+const Register = lazy(() => import('./Components/Auth/Register.jsx'));
+const Profile = lazy(() => import('./Components/Profile/Profile.jsx'));
 
 // Private Route
 const PrivateRoute = ({ children }) => {
