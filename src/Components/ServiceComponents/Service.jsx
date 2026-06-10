@@ -24,7 +24,7 @@ ChartJS.register(
 );
 
 const Service = () => {
-  const Api_key = "a0da998d604c8d0c60ea4b420652beeb";
+  const Api_key = import.meta.env.VITE_WEATHER_API_KEY;
 
   // useParams orqali city olinadi — URL: /service/:city
   const params = useParams();

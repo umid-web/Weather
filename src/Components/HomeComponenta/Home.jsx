@@ -3,7 +3,7 @@ import "../HomeComponenta/Home.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const Api_key = "a0da998d604c8d0c60ea4b420652beeb";
+  const Api_key = import.meta.env.VITE_WEATHER_API_KEY;
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
