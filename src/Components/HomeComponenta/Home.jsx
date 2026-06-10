@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../HomeComponenta/Home.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const Api_key = import.meta.env.VITE_WEATHER_API_KEY;
@@ -9,7 +9,7 @@ const Home = () => {
   const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
+
 
   const getWeather = async () => {
     if (!city.trim()) {
